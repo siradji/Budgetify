@@ -1,0 +1,9 @@
+{
+  "name": "budgetify",
+  "version": "1.0.0",
+  "description": "An expense Tracker App using Vanilla JS",
+  "main": "index.js",
+  "author": "Siradji Awoual",
+  "license": "MIT",
+  "private": false
+}
