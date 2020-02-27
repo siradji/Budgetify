@@ -10,11 +10,11 @@
   </head>
 
   <body>
-    <header id="head" class="bg-dark mt-0 py-1 mb-2">
+    <header id="head" class="bg-dark mt-0 py-1 mb-1">
       <div class="container">
-        <h1 class=" mb-0 text-white">
+        <h3 class=" mb-0 text-white">
           BUD<span class="text-success">GETIFY</span>
-        </h1>
+        </h3>
         <p class="lead  text-warning">
           Making Budget Mangetment Simple
         </p>
@@ -48,34 +48,43 @@
         </div>
         <div class="col-8 border p-5">
           <div class="outputContainer">
-            <div class="available mx-1">
+            <div class="available ">
               <p
-                class="text-white bg-success top lead text-center  border border-success mx-3 p-4"
+                class="text-white bg-success top lead text-center  border border-success mb-0 p-4"
               >
                 Money Left
               </p>
 
-              <div class="text-black text-center display-4" id="availOutput">
+              <div
+                class="text-white bg-dark bd py-4 text-center display-4 "
+                id="availOutput"
+              >
                 0
               </div>
             </div>
-            <div class="expense  mx-1">
+            <div class="expense  ">
               <p
-                class="text-white lead text-center bg-danger top  border border-danger mx-3 p-4"
+                class="text-white lead text-center bg-danger top  border border-danger mb-0 p-4"
               >
                 Expenses
               </p>
-              <div class="text-black text-center display-4 " id="expenseOutput">
+              <div
+                class="text-white bg-dark bd py-4 text-center display-4 "
+                id="expenseOutput"
+              >
                 0
               </div>
             </div>
-            <div class="total  mx-1">
+            <div class="total ">
               <p
-                class="text-white lead bg-primary top text-center border border-primary mx-3 p-4"
+                class="text-white lead bg-primary top text-center border border-primary mb-0 p-4"
               >
-                Total
+                Money Added
               </p>
-              <div class="text-black text-center display-4" id="totalOutput">
+              <div
+                class="text-white bg-dark bd py-4 text-center display-4"
+                id="totalOutput"
+              >
                 0
               </div>
             </div>
@@ -119,9 +128,9 @@
           <table class="table table-striped">
             <thead>
               <tr>
-                <th class="text-black display-5">Expense</th>
-                <th class="text-black display-5">Amount</th>
-                <th class="text-black display-5"></th>
+                <th class="text-black">Expense</th>
+                <th class="text-black">Amount</th>
+                <th class="text-black"></th>
               </tr>
             </thead>
             <tbody id="budgetList"></tbody>

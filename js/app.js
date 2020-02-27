@@ -63,6 +63,7 @@ class Events {
         out.innerHTML = value3 += value;
         this.createTable(val.value);
         Utility.clearfield(val);
+        Utility.clearfield(expenseNameValue);
         this.availMoney(availOutput);
       }
     });
@@ -81,6 +82,7 @@ class Events {
     rows.innerHTML = `
     <td>${expenseName}</td>
     <td>${val}</td>
+    <td class='bg-danger px-1 text-white' id='delete'>Remove</td>
     `;
     budgetList.appendChild(rows);
   }
