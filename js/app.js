@@ -31,39 +31,38 @@ const expenseNameValue = budget.expenseNameValue;
 const expenseOutput = budget.expenseOutput;
 const availOutput = budget.availOutput;
 const totalOutput = budget.totalOutput;
-
-const exVal = expenseOutput.innerHTML;
+const expenseVal = expenseOutput.innerHTML;
 
 class Events {
   //  Add Money Function
-  static addMoney(form, val, out) {
+  static addMoney(form, val, output) {
     const targetForm = form;
     targetForm.addEventListener('submit', (e) => {
       e.preventDefault();
       if (val.value !== '') {
         let value = parseInt(val.value);
-        let value2 = out.textContent;
+        let value2 = output.textContent;
         value2 = parseInt(value2);
-        out.textContent = value2 += value;
+        output.textContent = value2 += value;
         this.availMoney(availOutput);
-        Utility.clearfield(val);
+        this.clearfield(val);
       }
     });
   }
 
   //  Add Expense Funtion
-  static addExpense(form, val, out) {
+  static addExpense(form, val, output) {
     let targetForm = form;
     targetForm.addEventListener('submit', (e) => {
       e.preventDefault();
       if (val.value !== '') {
         let value = parseInt(val.value);
-        let value2 = out.textContent;
+        let value2 = output.textContent;
         let value3 = parseInt(value2);
-        out.innerHTML = value3 += value;
+        output.innerHTML = value3 += value;
         this.createTable(val.value);
-        Utility.clearfield(val);
-        Utility.clearfield(expenseNameValue);
+        this.clearfield(val);
+        this.clearfield(expenseNameValue);
         this.availMoney(availOutput);
       }
     });
@@ -82,16 +81,24 @@ class Events {
     rows.innerHTML = `
     <td>${expenseName}</td>
     <td>${val}</td>
-    <td class='bg-danger px-1 text-white' id='delete'>Remove</td>
+    <td class='bg-danger px-1 text-white delete'>Remove</td>
     `;
     budgetList.appendChild(rows);
   }
-}
 
-class Utility {
   static clearfield(v) {
     v.value = '';
   }
+
+  static deleteExpense(target) {
+    target.classList.contains('delete') ? target.parentElement.remove() : null;
+  }
 }
+
+// Delete Expense
+document.querySelector('#budgetList').addEventListener('click', (e) => {
+  Events.deleteExpense(e.target);
+});
+
 Events.addMoney(inputForm, addMoneyValue, totalOutput);
 Events.addExpense(expenseForm, expenseValue, expenseOutput);
