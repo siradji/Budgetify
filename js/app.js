@@ -13,7 +13,7 @@ class UI {
     this.list = document.querySelector('#budgetList');
   }
 }
-// instanciating a new UI
+// instantiating a new UI
 const budget = new UI();
 // UI forms & list
 const inputForm = budget.inputForm;
